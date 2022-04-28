@@ -10,13 +10,10 @@ namespace SugangSincheong
 {
     public class Subject
     {
-        public string name
-        {
-            get;
-            private set;
-        }
-        private List<string> professors = new List<string>();
-        private List<string> times = new List<string>();
+        public bool isUntact;
+        public string name;
+        public List<string> professors = new List<string>();
+        public List<ClassTime> times = new List<ClassTime>();
 
     }
 
@@ -31,12 +28,18 @@ namespace SugangSincheong
             [JsonInclude]
             public string? sbjetNm;
             [JsonInclude]
+            public string? lctreMthodNm;
+            [JsonInclude]
             public string? totalPrfssNm;
         }
 
         public string print()
         {
             string s = "";
+            if(data == null)
+            {
+                return "ND";
+            }
             foreach(var sbj in data)
             {
                 s += sbj.sbjetNm;
@@ -47,12 +50,31 @@ namespace SugangSincheong
 
         public List<Subject> toSubjects()
         {
-
+            if (data == null)
+                return null;
+            List<Subject> subjects = new List<Subject>();
+            foreach(var sbj in data)
+            {
+                Subject subject = new Subject();
+                subject.name = sbj.sbjetNm;
+                subject.isUntact = sbj.lctreMthodNm != "대면";
+                string[] ss = sbj.totalPrfssNm.Split("<br/>");
+                subject.professors.AddRange(ss);
+                List<ClassTime> ct = new List<ClassTime>();
+                foreach(string s in sbj.lssnsTimeInfo.Split("<br/>"))
+                    ct.Add(new ClassTime(s));
+                foreach(var t in ct)
+                {
+                    subject.times.Add(t);
+                }
+                subjects.Add(subject);
+            }
+            return subjects;
         }
     }
     internal class ClassLoader
     {
-        private List<Subject> subjects;
+        public List<Subject> subjects;
         public void LoadFromJson(string filePath)
         {
             string jsonStr = File.ReadAllText(filePath);
@@ -63,7 +85,7 @@ namespace SugangSincheong
                 MessageBox.Show("No Data");
                 return;
             }
-            MessageBox.Show(subjectdatas.print());
+            subjects = subjectdatas.toSubjects();
         }
     }
 }
