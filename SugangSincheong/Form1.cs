@@ -6,7 +6,6 @@ namespace SugangSincheong
         public Form1()
         {
             InitializeComponent();
-            string s = "테스트용";
         }
 
         private void testText_Click(object sender, EventArgs e)
@@ -14,9 +13,10 @@ namespace SugangSincheong
             
         }
 
+
         private void searchButton_Click(object sender, EventArgs e)
         {
-            cl.LoadFromJson(@"C:\Users\ksc10\source\repos\SugangSincheong\SugangSincheong\jsons\gg.json");
+            cl.LoadFromJson(Application.StartupPath + @"\..\..\..\jsons\gg.json");
             foreach(var s in cl.subjects)
             {
                 subjectList.Items.Add(s.name);
@@ -32,8 +32,19 @@ namespace SugangSincheong
             for(int i = 1;i< current.professors.Count;i++)
                 selectedSubject.Items.Add("\t" + current.professors[i]);
             selectedSubject.Items.Add("시간표\t" + current.times[0].ToString());
+            int color = new Random().Next(6);
+            foreach (var i in current.times[0].time)
+            {
+                scheduleShow.SetColor(current.times[0].dayInt(), i, color);
+            }
             for (int i = 1; i < current.times.Count; i++)
+            {
                 selectedSubject.Items.Add("\t" + current.times[i].ToString());
+                foreach (var k in current.times[i].time)
+                {
+                    scheduleShow.SetColor(current.times[i].dayInt(), k, color);
+                }
+            }
             selectedSubject.Items.Add("수업방식\t" + (current.isUntact ? "비대면" : "대면"));
         }
     }

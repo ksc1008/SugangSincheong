@@ -10,6 +10,25 @@ namespace SugangSincheong
     {
         public char day { get; private set; }
         public List<int> time = new List<int>();
+        public int dayInt()
+        {
+            switch (day)
+            {
+                case '월':
+                    return 0;
+                case '화':
+                    return 1;
+                case '수':
+                    return 2;
+                case '목':
+                    return 3;
+                case '금':
+                    return 4;
+                case '토':
+                    return 5;
+            }
+            return -1;
+        }
 
         public ClassTime(string s)
         {
