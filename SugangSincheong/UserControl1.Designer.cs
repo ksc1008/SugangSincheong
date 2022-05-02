@@ -1,6 +1,6 @@
 ﻿namespace SugangSincheong
 {
-    partial class UserControl1
+    partial class form
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // UserControl1
+            // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Name = "UserControl1";
+            this.Name = "Schedule";
             this.Size = new System.Drawing.Size(420, 800);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UserControl1_Paint);
             this.Resize += new System.EventHandler(this.UserControl1_Resize);

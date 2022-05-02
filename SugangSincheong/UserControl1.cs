@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SugangSincheong
 {
-    public partial class UserControl1 : UserControl
+    public partial class form : UserControl
     {
         int[,] colors = new int[6,28];
         int[] sbjNum = new int[28];
@@ -65,7 +65,7 @@ namespace SugangSincheong
         }
 
         List<Panel> panels = new List<Panel>();
-        public UserControl1()
+        public form()
         {
             latestSubj = 12;
             InitializeComponent();
