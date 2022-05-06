@@ -31,14 +31,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.LeftsidePanel = new System.Windows.Forms.Panel();
-            this.SearchOption = new System.Windows.Forms.Button();
+            this.searchBarPanel = new System.Windows.Forms.Panel();
             this.SearchBox = new System.Windows.Forms.TextBox();
+            this.SearchOption = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.SearchContentPanel = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.subjectList = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.selectedSubject = new System.Windows.Forms.ListBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.LeftsidePanel.SuspendLayout();
+            this.searchBarPanel.SuspendLayout();
             this.SearchContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -67,7 +69,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1383, 828);
+            this.tabControl1.Size = new System.Drawing.Size(1253, 752);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
@@ -85,26 +87,43 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1375, 800);
+            this.tabPage1.Size = new System.Drawing.Size(1245, 724);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // LeftsidePanel
             // 
-            this.LeftsidePanel.Controls.Add(this.SearchOption);
-            this.LeftsidePanel.Controls.Add(this.SearchBox);
+            this.LeftsidePanel.Controls.Add(this.searchBarPanel);
             this.LeftsidePanel.Controls.Add(this.SearchContentPanel);
-            this.LeftsidePanel.Controls.Add(this.searchButton);
             this.LeftsidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftsidePanel.Location = new System.Drawing.Point(3, 2);
             this.LeftsidePanel.Name = "LeftsidePanel";
-            this.LeftsidePanel.Size = new System.Drawing.Size(691, 796);
+            this.LeftsidePanel.Size = new System.Drawing.Size(691, 720);
             this.LeftsidePanel.TabIndex = 13;
+            // 
+            // searchBarPanel
+            // 
+            this.searchBarPanel.Controls.Add(this.SearchBox);
+            this.searchBarPanel.Controls.Add(this.SearchOption);
+            this.searchBarPanel.Controls.Add(this.searchButton);
+            this.searchBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchBarPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchBarPanel.Name = "searchBarPanel";
+            this.searchBarPanel.Size = new System.Drawing.Size(691, 41);
+            this.searchBarPanel.TabIndex = 15;
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchBox.Location = new System.Drawing.Point(2, 7);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(491, 27);
+            this.SearchBox.TabIndex = 13;
             // 
             // SearchOption
             // 
-            this.SearchOption.Location = new System.Drawing.Point(608, 8);
+            this.SearchOption.Location = new System.Drawing.Point(605, 5);
             this.SearchOption.Name = "SearchOption";
             this.SearchOption.Size = new System.Drawing.Size(80, 30);
             this.SearchOption.TabIndex = 14;
@@ -112,21 +131,27 @@
             this.SearchOption.UseVisualStyleBackColor = true;
             this.SearchOption.Click += new System.EventHandler(this.SearchOption_Click);
             // 
-            // SearchBox
+            // searchButton
             // 
-            this.SearchBox.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SearchBox.Location = new System.Drawing.Point(5, 10);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(491, 27);
-            this.SearchBox.TabIndex = 13;
+            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchButton.Location = new System.Drawing.Point(499, 5);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchButton.MaximumSize = new System.Drawing.Size(100, 30);
+            this.searchButton.MinimumSize = new System.Drawing.Size(100, 30);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(100, 30);
+            this.searchButton.TabIndex = 1;
+            this.searchButton.Text = "검색";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // SearchContentPanel
             // 
             this.SearchContentPanel.Controls.Add(this.splitContainer1);
-            this.SearchContentPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SearchContentPanel.Location = new System.Drawing.Point(0, 43);
+            this.SearchContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SearchContentPanel.Location = new System.Drawing.Point(0, 0);
             this.SearchContentPanel.Name = "SearchContentPanel";
-            this.SearchContentPanel.Size = new System.Drawing.Size(691, 753);
+            this.SearchContentPanel.Size = new System.Drawing.Size(691, 720);
             this.SearchContentPanel.TabIndex = 12;
             // 
             // splitContainer1
@@ -143,7 +168,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(691, 753);
+            this.splitContainer1.Size = new System.Drawing.Size(691, 720);
             this.splitContainer1.SplitterDistance = 277;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -156,7 +181,7 @@
             this.subjectList.Location = new System.Drawing.Point(0, 0);
             this.subjectList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.subjectList.Name = "subjectList";
-            this.subjectList.Size = new System.Drawing.Size(277, 753);
+            this.subjectList.Size = new System.Drawing.Size(277, 720);
             this.subjectList.TabIndex = 0;
             this.subjectList.SelectedIndexChanged += new System.EventHandler(this.subjectList_SelectedIndexChanged);
             // 
@@ -166,7 +191,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 753);
+            this.panel1.Size = new System.Drawing.Size(410, 720);
             this.panel1.TabIndex = 3;
             // 
             // selectedSubject
@@ -180,28 +205,14 @@
             this.selectedSubject.Location = new System.Drawing.Point(0, 0);
             this.selectedSubject.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.selectedSubject.Name = "selectedSubject";
-            this.selectedSubject.Size = new System.Drawing.Size(410, 753);
+            this.selectedSubject.Size = new System.Drawing.Size(410, 720);
             this.selectedSubject.TabIndex = 2;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchButton.Location = new System.Drawing.Point(502, 8);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchButton.MaximumSize = new System.Drawing.Size(100, 30);
-            this.searchButton.MinimumSize = new System.Drawing.Size(100, 30);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(100, 30);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "검색";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(1325, 10);
+            this.label6.Location = new System.Drawing.Point(1095, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 19);
             this.label6.TabIndex = 11;
@@ -212,7 +223,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(1255, 10);
+            this.label5.Location = new System.Drawing.Point(1025, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 19);
             this.label5.TabIndex = 10;
@@ -223,7 +234,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(1185, 10);
+            this.label4.Location = new System.Drawing.Point(955, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 19);
             this.label4.TabIndex = 9;
@@ -234,7 +245,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(1115, 10);
+            this.label3.Location = new System.Drawing.Point(885, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 19);
             this.label3.TabIndex = 8;
@@ -245,7 +256,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(1045, 10);
+            this.label2.Location = new System.Drawing.Point(815, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 19);
             this.label2.TabIndex = 7;
@@ -256,7 +267,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(975, 10);
+            this.label1.Location = new System.Drawing.Point(745, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 19);
             this.label1.TabIndex = 6;
@@ -266,9 +277,9 @@
             // scheduleShow
             // 
             this.scheduleShow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.scheduleShow.Location = new System.Drawing.Point(950, 32);
+            this.scheduleShow.Location = new System.Drawing.Point(720, 32);
             this.scheduleShow.Name = "scheduleShow";
-            this.scheduleShow.Size = new System.Drawing.Size(420, 760);
+            this.scheduleShow.Size = new System.Drawing.Size(420, 670);
             this.scheduleShow.TabIndex = 4;
             // 
             // tabPage2
@@ -277,7 +288,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1375, 800);
+            this.tabPage2.Size = new System.Drawing.Size(1245, 724);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -286,18 +297,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1383, 828);
+            this.ClientSize = new System.Drawing.Size(1253, 752);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "수강 계획서 조회기";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.LeftsidePanel.ResumeLayout(false);
-            this.LeftsidePanel.PerformLayout();
+            this.searchBarPanel.ResumeLayout(false);
+            this.searchBarPanel.PerformLayout();
             this.SearchContentPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -329,5 +341,6 @@
         private Panel SearchContentPanel;
         private TextBox SearchBox;
         private Button SearchOption;
+        private Panel searchBarPanel;
     }
 }
