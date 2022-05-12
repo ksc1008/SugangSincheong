@@ -10,6 +10,7 @@ namespace SugangSincheong
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            splitContainer1.Height = splitContainer1.Parent.Height - 40;
         }
 
 
@@ -97,6 +98,11 @@ namespace SugangSincheong
         private void SearchOption_Click(object sender, EventArgs e)
         {
             optionWindow.Show();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

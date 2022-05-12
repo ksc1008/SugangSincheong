@@ -31,11 +31,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.LeftsidePanel = new System.Windows.Forms.Panel();
+            this.SearchContentPanel = new System.Windows.Forms.Panel();
             this.searchBarPanel = new System.Windows.Forms.Panel();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.SearchOption = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
-            this.SearchContentPanel = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.subjectList = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,8 +51,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.LeftsidePanel.SuspendLayout();
-            this.searchBarPanel.SuspendLayout();
             this.SearchContentPanel.SuspendLayout();
+            this.searchBarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -69,7 +69,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1253, 752);
+            this.tabControl1.Size = new System.Drawing.Size(1164, 735);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
@@ -87,20 +87,30 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1245, 724);
+            this.tabPage1.Size = new System.Drawing.Size(1156, 707);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // LeftsidePanel
             // 
-            this.LeftsidePanel.Controls.Add(this.searchBarPanel);
             this.LeftsidePanel.Controls.Add(this.SearchContentPanel);
             this.LeftsidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftsidePanel.Location = new System.Drawing.Point(3, 2);
             this.LeftsidePanel.Name = "LeftsidePanel";
-            this.LeftsidePanel.Size = new System.Drawing.Size(691, 720);
+            this.LeftsidePanel.Size = new System.Drawing.Size(691, 703);
             this.LeftsidePanel.TabIndex = 13;
+            // 
+            // SearchContentPanel
+            // 
+            this.SearchContentPanel.Controls.Add(this.searchBarPanel);
+            this.SearchContentPanel.Controls.Add(this.splitContainer1);
+            this.SearchContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SearchContentPanel.Location = new System.Drawing.Point(0, 0);
+            this.SearchContentPanel.Name = "SearchContentPanel";
+            this.SearchContentPanel.Size = new System.Drawing.Size(691, 703);
+            this.SearchContentPanel.TabIndex = 12;
             // 
             // searchBarPanel
             // 
@@ -110,7 +120,7 @@
             this.searchBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchBarPanel.Location = new System.Drawing.Point(0, 0);
             this.searchBarPanel.Name = "searchBarPanel";
-            this.searchBarPanel.Size = new System.Drawing.Size(691, 41);
+            this.searchBarPanel.Size = new System.Drawing.Size(691, 40);
             this.searchBarPanel.TabIndex = 15;
             // 
             // SearchBox
@@ -145,20 +155,11 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // SearchContentPanel
-            // 
-            this.SearchContentPanel.Controls.Add(this.splitContainer1);
-            this.SearchContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SearchContentPanel.Location = new System.Drawing.Point(0, 0);
-            this.SearchContentPanel.Name = "SearchContentPanel";
-            this.SearchContentPanel.Size = new System.Drawing.Size(691, 720);
-            this.SearchContentPanel.TabIndex = 12;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer1.Location = new System.Drawing.Point(0, -32);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -168,7 +169,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(691, 720);
+            this.splitContainer1.Size = new System.Drawing.Size(691, 735);
             this.splitContainer1.SplitterDistance = 277;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -181,7 +182,7 @@
             this.subjectList.Location = new System.Drawing.Point(0, 0);
             this.subjectList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.subjectList.Name = "subjectList";
-            this.subjectList.Size = new System.Drawing.Size(277, 720);
+            this.subjectList.Size = new System.Drawing.Size(277, 735);
             this.subjectList.TabIndex = 0;
             this.subjectList.SelectedIndexChanged += new System.EventHandler(this.subjectList_SelectedIndexChanged);
             // 
@@ -191,7 +192,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 720);
+            this.panel1.Size = new System.Drawing.Size(410, 735);
             this.panel1.TabIndex = 3;
             // 
             // selectedSubject
@@ -205,7 +206,7 @@
             this.selectedSubject.Location = new System.Drawing.Point(0, 0);
             this.selectedSubject.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
             this.selectedSubject.Name = "selectedSubject";
-            this.selectedSubject.Size = new System.Drawing.Size(410, 720);
+            this.selectedSubject.Size = new System.Drawing.Size(410, 735);
             this.selectedSubject.TabIndex = 2;
             // 
             // label6
@@ -288,7 +289,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1245, 724);
+            this.tabPage2.Size = new System.Drawing.Size(1297, 779);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -297,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 752);
+            this.ClientSize = new System.Drawing.Size(1164, 735);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -308,9 +309,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.LeftsidePanel.ResumeLayout(false);
+            this.SearchContentPanel.ResumeLayout(false);
             this.searchBarPanel.ResumeLayout(false);
             this.searchBarPanel.PerformLayout();
-            this.SearchContentPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
